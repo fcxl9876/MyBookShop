@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyBookShop" Class="MyBookShopDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MyBookShop.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MyBookShopConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Book" Member="Book">
+    <Type Name="Book">
+      <Column Name="BookId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ListPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="UnitCost" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="PressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Descn" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Book" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" />
+      <Association Name="Press_Book" Member="Press" ThisKey="PressId" OtherKey="PressId" Type="Press" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Category">
+    <Type Name="Category">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Descn" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Category_Book" Member="Book" ThisKey="CategoryId" OtherKey="CategoryId" Type="Book" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Order">
+    <Type Name="Order">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Addr" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Order_OrderItem" Member="OrderItem" ThisKey="OrderId" OtherKey="OrderId" Type="OrderItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Press" Member="Press">
+    <Type Name="Press">
+      <Column Name="PressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Addr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Association Name="Press_Book" Member="Book" ThisKey="PressId" OtherKey="PressId" Type="Book" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderItem" Member="OrderItem">
+    <Type Name="OrderItem">
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ListPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Association Name="Order_OrderItem" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
