@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="首页" description="首页">
+    <siteMapNode url="~/NewUser.aspx" title="注册" description="注册" />
+    <siteMapNode url="~/Login.aspx" title="登录" description="登录" />
+    <siteMapNode url="~/OrderList.aspx" title="购物记录" description="购物记录" />
+    <siteMapNode url="~/ChangePwd.aspx" title="更改密码" description="更改密码" />
+    <siteMapNode url="~/GetPwd.aspx" title="取回密码" description="取回密码" />
+    <siteMapNode url="~/Search.aspx" title="搜索页面" description="搜索页面" />
+    <siteMapNode url="~/BookShow.aspx" title="分类查看" description="分类查看" />
+    <siteMapNode url="~/BookShow.aspx" title="图书详情" description="图书详情" />
+    <siteMapNode url="~/ShopCart.aspx" title="购物车" description="购物车">
+      <siteMapNode url="~/SubmitCart.aspx" title="订单提交" description="订单提交">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Map.aspx" title="网站地图" description="网站地图" />
+  </siteMapNode>
+</siteMap>

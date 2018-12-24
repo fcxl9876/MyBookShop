@@ -1,0 +1,108 @@
+body {
+  font-size: 12px;
+  margin: 0px;
+  background-color: #616378;
+  text-align: center;
+}
+
+td {
+  font-size: 12px;
+}
+
+  td.content {
+    font-size: 14px;
+    color: #000000;
+    line-height: 140%;
+  }
+
+
+    td.content a:link {
+      text-decoration: underline;
+    }
+
+  td.list {
+    line-height: 148%;
+  }
+
+hr {
+  color: #000000;
+  height: 1px;
+}
+
+textarea {
+  font-size: 12px;
+  font-family: "Tahoma", "MS Shell Dlg";
+}
+
+a:link {
+  color: #333366;
+  text-decoration: none;
+}
+
+a:active {
+  color: #333366;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #333366;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+a.navlink:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a.navlink:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a.navlink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.navLight {
+  color: #ffffff;
+  background-color: #666688;
+}
+
+.navDark {
+  background-color: #8c8ea3;
+}
+
+.border {
+  margin: auto;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+select {
+  font-size: 12px;
+  font-family: "MS Shell Dlg";
+}
+
+form {
+  margin-top: 3px;
+  font-size: 12px;
+  margin-bottom: 0;
+  font-family: "Tahoma", "MS Shell Dlg";
+}
+
+input {
+  font-size: 12px;
+  font-family: "Tahoma", "MS Shell Dlg";
+}
+
+.modalbg {
+  background-color: Gray;
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
