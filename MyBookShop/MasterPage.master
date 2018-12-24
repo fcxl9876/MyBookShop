@@ -17,7 +17,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         <!--WebPart管理控件-->
         <asp:WebPartManager ID="WebPartManager1" runat="server">
         </asp:WebPartManager>
@@ -142,7 +141,7 @@
           <table class="border" style="width: 778px; border: 6px solid #fff; background: #fff;">
             <tr>
               <td style="width: 227px; vertical-align: top; background: #f2f3f7;">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
               </td>
               <td style="width: 533px; vertical-align: top; background: #f2f3f7;">
@@ -171,7 +170,7 @@
                 <table style="width: 100%; border: 6px solid #fff;">
                   <tr>
                     <td>
-                      <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                      <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
                       </asp:ContentPlaceHolder>
                     </td>
                   </tr>
@@ -180,7 +179,7 @@
             </tr>
           </table>
         </section>
-        
+
         <!--Body2-->
         <section>
           <table style="width: 778px; border: 0; background: #fff;" class="border">
@@ -197,11 +196,11 @@
           <table style="width: 778px; border: 6px solid #fff;" class="border">
             <tr>
               <td style="width: 227px; vertical-align: top;">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
                 </asp:ContentPlaceHolder>
               </td>
               <td style="vertical-align: top; width: 550px;">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
                 </asp:ContentPlaceHolder>
               </td>
             </tr>
