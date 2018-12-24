@@ -1,5 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="UserControl/UserStatus.ascx" TagName="UserStatus" TagPrefix="uc" %>
+<%@ Register Src="UserControl/SiteMap.ascx" TagName="SiteMap" TagPrefix="uc" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -8,13 +12,223 @@
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="Styles/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
+        <!--WebPart管理控件-->
+        <asp:WebPartManager ID="WebPartManager1" runat="server">
+        </asp:WebPartManager>
+        <!--AJAX管理控件-->
+        <asp:ScriptManager ID="ToolkitScriptManager1" runat="server" EnablePartialRendering="True"></asp:ScriptManager>
+        <!--AJAX扩展控件-->
+        <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="txtSearch" MinimumPrefixLength="1" ServiceMethod="GetStrings" ServicePath="Search.asmx">
+        </ajaxToolkit:AutoCompleteExtender>
         </asp:ContentPlaceHolder>
+        <!--Header-->
+        <header>
+          <table style="width: 778px; border: 0; border: 6px solid #fff;" class="border">
+            <tr>
+              <td style="width: 256px;">
+                <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.gif" />
+              </td>
+              <td style="width: 504px; vertical-align: top;">
+                <table style="width: 100%; border: 0;">
+                  <tr style="vertical-align: top;">
+                    <td>
+                      <table style="width: 100%; border: 6px solid #8c8ea3;" class="navDark">
+                        <tr>
+                          <td style="text-align: center;">
+                            <asp:LinkButton ID="lbtnDefault" runat="server" CausesValidation="False" ForeColor="White" PostBackUrl="~/Default.aspx">首页</asp:LinkButton>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="width: 6px;">
+                      <img height="6" src="Images/spacer.gif" width="6" alt="" />
+                    </td>
+                    <td>
+                      <table style="width: 100%; border: 6px solid #8c8ea3;" class="navDark">
+                        <tr>
+                          <td style="text-align: center;">
+                            <asp:LinkButton ID="lbtnReset" runat="server" CausesValidation="False" ForeColor="White" OnClick="lbtnReset_Click">个性重置</asp:LinkButton>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="width: 6px;">
+                      <img height="6" src="Images/spacer.gif" width="6" alt="" />
+                    </td>
+                    <td>
+                      <table style="width: 100%; border: 6px solid #8c8ea3;" class="navDark">
+                        <tr>
+                          <td style="text-align: center;">
+                            <asp:LinkButton ID="lbtnRegister" runat="server" CausesValidation="False" ForeColor="White" OnClick="lbtnRegister_Click">注册</asp:LinkButton>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="width: 6px;">
+                      <img height="6" src="Images/spacer.gif" width="6" alt="" />
+                    </td>
+                    <td>
+                      <table style="width: 100%; border: 6px solid #8c8ea3;" class="navDark">
+                        <tr>
+                          <td style="text-align: center;">
+                            <asp:LinkButton ID="lbtnLogin" runat="server" CausesValidation="False" ForeColor="White" OnClick="lbtnLogin_Click">登录</asp:LinkButton>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="width: 6px;">
+                      <img height="6" src="Images/spacer.gif" width="6" alt="" />
+                    </td>
+                    <td>
+                      <table style="width: 100%; border: 6px solid #8c8ea3;" class="navDark">
+                        <tr>
+                          <td style="text-align: center;">
+                            <asp:LinkButton ID="lbtnCart" runat="server" CausesValidation="False" ForeColor="White" PostBackUrl="~/ShopCart.aspx">购物车</asp:LinkButton>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="width: 6px;">
+                      <img height="6" src="Images/spacer.gif" width="6" alt="" />
+                    </td>
+                    <td>
+                      <table style="width: 100%; border: 6px solid #8c8ea3;" class="navDark">
+                        <tr>
+                          <td style="text-align: center;">
+                            <asp:LinkButton ID="lbtnSiteMap" runat="server" CausesValidation="False" ForeColor="White" PostBackUrl="~/Map.aspx">网站地图</asp:LinkButton>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <table class="navLight" style="width: 100%; border: 6px solid #666688;">
+                  <tr>
+                    <td>
+                      <uc:UserStatus ID="UserStatus1" runat="server" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </header>
+
+        <!--Navigation-->
+        <nav>
+          <table style="width: 778px; border: 0; background: #fff;" class="border">
+            <tr>
+              <td style="text-align: center;">
+                <table style="width: 766px; border: 6px solid #fff; background: #ccccd4;">
+                  <tr>
+                    <td style="text-align: left;">
+                      <uc:SiteMap ID="SiteMap1" runat="server" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </nav>
+
+        <!--Body1-->
+        <section>
+          <table class="border" style="width: 778px; border: 6px solid #fff; background: #fff;">
+            <tr>
+              <td style="width: 227px; vertical-align: top; background: #f2f3f7;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+              </td>
+              <td style="width: 533px; vertical-align: top; background: #f2f3f7;">
+                <table style="width: 100%; border: 0;">
+                  <tr>
+                    <td>
+                      <table style="width: 100%; border: 6px solid #fff;">
+                        <tr style="background: #cfcdaf;">
+                          <td>
+                            <asp:Image ID="imgSearch" runat="server" ImageUrl="~/Images/google_logo.gif" />
+                          </td>
+                          <td>
+                            <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                          </td>
+                          <td>
+                            <asp:ImageButton ID="imgbtnSearch" runat="server" ImageUrl="~/Images/searchbutton.gif" CausesValidation="False" OnClick="imgbtnSearch_Click" />
+                          </td>
+                          <td>
+                            <asp:ImageButton ID="imgbtnXml" runat="server" ImageUrl="~/Images/xml.gif" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <table style="width: 100%; border: 6px solid #fff;">
+                  <tr>
+                    <td>
+                      <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                      </asp:ContentPlaceHolder>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </section>
+        
+        <!--Body2-->
+        <section>
+          <table style="width: 778px; border: 0; background: #fff;" class="border">
+            <tr>
+              <td style="text-align: center;">
+                <table style="width: 766px; border: 0; background: #ccccd4;">
+                  <tr>
+                    <td style="text-align: left; height: 10px;"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table style="width: 778px; border: 6px solid #fff;" class="border">
+            <tr>
+              <td style="width: 227px; vertical-align: top;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+                </asp:ContentPlaceHolder>
+              </td>
+              <td style="vertical-align: top; width: 550px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">
+                </asp:ContentPlaceHolder>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <!--Footer-->
+        <footer>
+          <table style="width: 778px; border: 6px solid #fff;" class="border">
+            <tr>
+              <td>
+                <table style="width: 100%; border: 0;" class="navLight">
+                  <tr>
+                    <td style="height: 42px; height: 42px;">
+                      <table style="width: 100%; border: 2px solid #fff;">
+                        <tr>
+                          <td>Copyright 2014 MyPetShop
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </footer>
     </div>
     </form>
 </body>
