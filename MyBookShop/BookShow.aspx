@@ -1,4 +1,4 @@
-﻿<%@ Page Title="商品详细" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ProShow.aspx.cs" Inherits="ProShow" %>
+﻿<%@ Page Title="商品详细" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="BookShow.aspx.cs" Inherits="BookShow" %>
 
 <%@ Register Src="UserControl/BookTree.ascx" TagName="BookTree" TagPrefix="uc" %>
 
@@ -10,7 +10,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
-  <asp:GridView ID="gvProduct" runat="server" AllowPaging="True" AutoGenerateColumns="false" OnPageIndexChanging="gvProduct_PageIndexChanging" PagerSettings-Mode="NextPrevious" PageSize="4" Width="100%">
+  <asp:GridView ID="gvBook" runat="server" AllowPaging="True" AutoGenerateColumns="false" OnPageIndexChanging="gvBook_PageIndexChanging" PagerSettings-Mode="NextPrevious" PageSize="4" Width="100%">
     <PagerSettings FirstPageText="首页" LastPageText="尾页" Mode="NextPrevious" NextPageText="下一页" Position="TopAndBottom" PreviousPageText="上一页" />
     <Columns>
       <asp:TemplateField>
@@ -46,7 +46,7 @@
             <tr>
               <td style="border: 1px solid #808080;">图书作者： </td>
               <td style="border: 1px solid #808080;">
-                <asp:Label ID="lblUnitCost" runat="server" Text='<%# Bind("Author") %>'></asp:Label>
+                <asp:Label ID="lblAuthor" runat="server" Text='<%# Bind("Author") %>'></asp:Label>
               </td>
             </tr>
             <tr>
