@@ -36,3 +36,29 @@
   </asp:UpdatePanel>
 </asp:Content>
 
+<asp:Content ID="Content5" runat="server" contentplaceholderid="ContentPlaceHolder4">
+    <asp:GridView ID="gvBook" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="BookId" DataSourceID="ldsBook" PageSize="5" OnRowDataBound="gvBook_RowDataBound">
+        <Columns>
+            <asp:BoundField DataField="BookId" HeaderText="BookId" ReadOnly="True" SortExpression="BookId" />
+            <asp:BoundField DataField="CategoryId" HeaderText="CategoryId" SortExpression="CategoryId" />
+            <asp:BoundField DataField="ListPrice" HeaderText="ListPrice" SortExpression="ListPrice" />
+            <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
+            <asp:BoundField DataField="PressId" HeaderText="PressId" SortExpression="PressId" />
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            <asp:BoundField DataField="Descn" HeaderText="Descn" SortExpression="Descn" />
+            <asp:ImageField DataImageUrlField="Image" HeaderText="Image" DataImageUrlFormatString="~\Image\{0}">
+                <ControlStyle Height="25px" Width="35px" />
+            </asp:ImageField>
+            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" />
+        </Columns>
+    </asp:GridView>
+    <asp:LinqDataSource ID="ldsBook" runat="server" ContextTypeName="MyBookShopDataContext" EntityTypeName="" TableName="Book"></asp:LinqDataSource>
+    每页显示
+    <asp:DropDownList ID="ddlPageSize" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlPageSize_SelectedIndexChanged">
+        <asp:ListItem>5</asp:ListItem>
+        <asp:ListItem>10</asp:ListItem>
+    </asp:DropDownList>
+    本图书&nbsp;&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label>
+</asp:Content>
+
+
