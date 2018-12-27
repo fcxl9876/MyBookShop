@@ -129,7 +129,7 @@ public partial class Book : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private System.Nullable<decimal> _ListPrice;
 	
-	private System.Nullable<decimal> _UnitCost;
+	private string _Author;
 	
 	private int _PressId;
 	
@@ -155,8 +155,8 @@ public partial class Book : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnCategoryIdChanged();
     partial void OnListPriceChanging(System.Nullable<decimal> value);
     partial void OnListPriceChanged();
-    partial void OnUnitCostChanging(System.Nullable<decimal> value);
-    partial void OnUnitCostChanged();
+    partial void OnAuthorChanging(string value);
+    partial void OnAuthorChanged();
     partial void OnPressIdChanging(int value);
     partial void OnPressIdChanged();
     partial void OnNameChanging(string value);
@@ -240,22 +240,22 @@ public partial class Book : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitCost", DbType="Decimal(10,2)")]
-	public System.Nullable<decimal> UnitCost
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="VarChar(50)")]
+	public string Author
 	{
 		get
 		{
-			return this._UnitCost;
+			return this._Author;
 		}
 		set
 		{
-			if ((this._UnitCost != value))
+			if ((this._Author != value))
 			{
-				this.OnUnitCostChanging(value);
+				this.OnAuthorChanging(value);
 				this.SendPropertyChanging();
-				this._UnitCost = value;
-				this.SendPropertyChanged("UnitCost");
-				this.OnUnitCostChanged();
+				this._Author = value;
+				this.SendPropertyChanged("Author");
+				this.OnAuthorChanged();
 			}
 		}
 	}
