@@ -39,17 +39,18 @@
 <asp:Content ID="Content5" runat="server" contentplaceholderid="ContentPlaceHolder4">
     <asp:GridView ID="gvBook" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="BookId" DataSourceID="ldsBook" PageSize="5" OnRowDataBound="gvBook_RowDataBound">
         <Columns>
-            <asp:BoundField DataField="BookId" HeaderText="BookId" ReadOnly="True" SortExpression="BookId" />
-            <asp:BoundField DataField="CategoryId" HeaderText="CategoryId" SortExpression="CategoryId" />
-            <asp:BoundField DataField="ListPrice" HeaderText="ListPrice" SortExpression="ListPrice" />
-            <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
-            <asp:BoundField DataField="PressId" HeaderText="PressId" SortExpression="PressId" />
-            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-            <asp:BoundField DataField="Descn" HeaderText="Descn" SortExpression="Descn" />
-            <asp:ImageField DataImageUrlField="Image" HeaderText="Image" DataImageUrlFormatString="~\Image\{0}">
+            <asp:BoundField DataField="Name" HeaderText="图书名称" SortExpression="Name" />
+            <asp:BoundField DataField="BookId" HeaderText="图书编号" ReadOnly="True" SortExpression="BookId" />
+            <asp:BoundField DataField="Author" HeaderText="图书作者" SortExpression="Author" />
+            <asp:BoundField DataField="CategoryId" HeaderText="图书分类号" SortExpression="CategoryId" />
+            <asp:BoundField DataField="PressId" HeaderText="出版社号" SortExpression="PressId" />
+            <asp:BoundField DataField="Qty" HeaderText="图书库存量" SortExpression="Qty" />
+            <asp:BoundField DataField="ListPrice" HeaderText="图书价格" SortExpression="ListPrice" />
+            <asp:BoundField DataField="Descn" HeaderText="图书描述" SortExpression="Descn" />
+            <asp:ImageField DataImageUrlField="Image" HeaderText="图书图片" SortExpression="Descn" DataImageUrlFormatString="~\Image\{0}">
                 <ControlStyle Height="25px" Width="35px" />
             </asp:ImageField>
-            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" />
+            
         </Columns>
     </asp:GridView>
     <asp:LinqDataSource ID="ldsBook" runat="server" ContextTypeName="MyBookShopDataContext" EntityTypeName="" TableName="Book"></asp:LinqDataSource>
