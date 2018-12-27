@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class UserControl_BookTree : System.Web.UI.UserControl
@@ -28,7 +25,7 @@ public partial class UserControl_BookTree : System.Web.UI.UserControl
             TreeNode treeNode = new TreeNode();
             treeNode.Text = category.Name;
             treeNode.Value = category.CategoryId.ToString();
-            treeNode.NavigateUrl = "~/ProShow.aspx?CategoryId=" + category.CategoryId.ToString();
+            treeNode.NavigateUrl = "~/BookShow.aspx?CategoryId=" + category.CategoryId.ToString();
             TreeView1.Nodes.Add(treeNode);
             BindTreeChild(treeNode, category.CategoryId);
         }
@@ -41,17 +38,16 @@ public partial class UserControl_BookTree : System.Web.UI.UserControl
     /// <param name="categoryId">指定分类号</param>
     protected void BindTreeChild(TreeNode tn, int categoryId)
     {
-        var books = from p in db.Book
-                       where p.Category.CategoryId == categoryId
-                       select p;
+        var books = from b in db.Book
+                       where b.Category.CategoryId == categoryId
+                       select b;
         foreach (var book in books)
         {
             TreeNode treeNode = new TreeNode();
             treeNode.Text = book.Name;
             treeNode.Value = book.BookId.ToString();
-            treeNode.NavigateUrl = "~/ProShow.aspx?ProductId=" + book.BookId.ToString();
+            treeNode.NavigateUrl = "~/BookShow.aspx?ProductId=" + book.BookId.ToString();
             tn.ChildNodes.Add(treeNode);
         }
     }
-}
 }

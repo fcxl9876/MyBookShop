@@ -25,7 +25,6 @@
         <!--AJAX扩展控件-->
         <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="txtSearch" MinimumPrefixLength="1" ServiceMethod="GetStrings" ServicePath="Search.asmx">
         </ajaxToolkit:AutoCompleteExtender>
-        </asp:ContentPlaceHolder>
         <!--Header-->
         <header>
           <table style="width: 778px; border: 0; border: 6px solid #fff;" class="border">
@@ -217,7 +216,7 @@
                     <td style="height: 42px; height: 42px;">
                       <table style="width: 100%; border: 2px solid #fff;">
                         <tr>
-                          <td>Copyright 2014 MyPetShop
+                          <td>Copyright 2018 MyBookShop
                           </td>
                         </tr>
                       </table>
