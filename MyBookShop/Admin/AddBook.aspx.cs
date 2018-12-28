@@ -78,10 +78,11 @@ public partial class Admin_AddBook : System.Web.UI.Page
             string fileName;
             string fileFolder;
             fileName = Path.GetFileName(fupImage.PostedFile.FileName);
-            fileFolder = Server.MapPath("~/") + "Images\\bookimg\\" + ddlCategoryId.SelectedItem.Text + "\\";
+            fileFolder = Server.MapPath("~/") + "Images\\bookimg\\";
             fileFolder = fileFolder + fileName;
             fupImage.PostedFile.SaveAs(fileFolder);
 
+            book.BookId = txtId.Text.Trim();
             book.Image = "~\\Images\\bookimg\\" + ddlCategoryId.SelectedItem.Text + "\\" + fileName;
             book.Name = txtName.Text.Trim();
             book.CategoryId = int.Parse(ddlCategoryId.SelectedValue);

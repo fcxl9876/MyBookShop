@@ -17,7 +17,7 @@
   <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
-  <a href="AddPro.aspx">添加商品</a>
+  <a href="AddBook.aspx">添加商品</a>
   <br />
   <asp:Panel ID="pnlProduct" runat="server">
     <asp:GridView ID="gvProduct" runat="server" Width="100%" AutoGenerateColumns="false" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvProduct_PageIndexChanging" PagerSettings-Mode="NextPrevious">

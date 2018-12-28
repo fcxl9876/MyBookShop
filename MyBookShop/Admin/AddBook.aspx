@@ -25,6 +25,17 @@
         </td>
       </tr>
       <tr>
+        <td style="width:17%; text-align:right; ">书号:
+        </td>
+        <td style="width:83%; ">
+          <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
+          <asp:RequiredFieldValidator ID="rfvId" runat="server" ControlToValidate="txtId"
+            ErrorMessage="不能为空"></asp:RequiredFieldValidator>
+          <asp:Label ID="lblIdErr" runat="server"
+            ForeColor="Red"></asp:Label>
+        </td>
+      </tr>
+      <tr>
         <td style="width:17%; text-align:right; ">图书名称:
         </td>
         <td style="width:83%; ">
