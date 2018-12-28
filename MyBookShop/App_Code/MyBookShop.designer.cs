@@ -1069,7 +1069,7 @@ public partial class OrderItem : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private int _OrderId;
 	
-	private string _ProName;
+	private string _BookName;
 	
 	private System.Nullable<decimal> _ListPrice;
 	
@@ -1087,8 +1087,8 @@ public partial class OrderItem : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnItemIdChanged();
     partial void OnOrderIdChanging(int value);
     partial void OnOrderIdChanged();
-    partial void OnProNameChanging(string value);
-    partial void OnProNameChanged();
+    partial void OnBookNameChanging(string value);
+    partial void OnBookNameChanged();
     partial void OnListPriceChanging(System.Nullable<decimal> value);
     partial void OnListPriceChanged();
     partial void OnQtyChanging(int value);
@@ -1147,22 +1147,22 @@ public partial class OrderItem : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProName", DbType="VarChar(80)")]
-	public string ProName
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookName", DbType="NVarChar(80)")]
+	public string BookName
 	{
 		get
 		{
-			return this._ProName;
+			return this._BookName;
 		}
 		set
 		{
-			if ((this._ProName != value))
+			if ((this._BookName != value))
 			{
-				this.OnProNameChanging(value);
+				this.OnBookNameChanging(value);
 				this.SendPropertyChanging();
-				this._ProName = value;
-				this.SendPropertyChanged("ProName");
-				this.OnProNameChanged();
+				this._BookName = value;
+				this.SendPropertyChanged("BookName");
+				this.OnBookNameChanged();
 			}
 		}
 	}
