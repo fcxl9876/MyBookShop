@@ -8,7 +8,7 @@
         <asp:Image ID="imgArrow" runat="server" ImageUrl="~/Images/arrow.gif" />
       </ItemTemplate>
     </asp:TemplateField>
-    <asp:HyperLinkField DataTextField="Name" DataTextFormatString="{0:c}" DataNavigateUrlFields="BookId" DataNavigateUrlFormatString="~/BookShow.aspx?ProductId={0}" HeaderText="Name" />
+    <asp:HyperLinkField DataTextField="Name" DataTextFormatString="{0:c}" DataNavigateUrlFields="BookId" DataNavigateUrlFormatString="~/BookShow.aspx?BookId={0}" HeaderText="Name" />
     <asp:BoundField DataField="ListPrice" HeaderText="Price" DataFormatString="{0:c}" />
   </Columns>
   <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />

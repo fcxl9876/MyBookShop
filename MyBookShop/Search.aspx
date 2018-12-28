@@ -62,7 +62,7 @@
           </table>
         </ItemTemplate>
       </asp:TemplateField>
-      <asp:HyperLinkField DataNavigateUrlFields="ProductId" DataNavigateUrlFormatString="~/ShopCart.aspx?ProductId={0}" DataTextFormatString="{0:c}" HeaderText="放入购物车" Text="购买" />
+      <asp:HyperLinkField DataNavigateUrlFields="BookId" DataNavigateUrlFormatString="~/ShopCart.aspx?BookId={0}" DataTextFormatString="{0:c}" HeaderText="放入购物车" Text="购买" />
     </Columns>
   </asp:GridView>
   <asp:Label ID="lblError" runat="server"></asp:Label>

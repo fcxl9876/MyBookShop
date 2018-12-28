@@ -47,7 +47,7 @@
             <asp:BoundField DataField="Qty" HeaderText="图书库存量" SortExpression="Qty" />
             <asp:BoundField DataField="ListPrice" HeaderText="图书价格" SortExpression="ListPrice" />
             <asp:BoundField DataField="Descn" HeaderText="图书描述" SortExpression="Descn" />
-            <asp:ImageField DataImageUrlField="Image" HeaderText="图书图片" SortExpression="Descn" DataImageUrlFormatString="~\Image\{0}">
+            <asp:ImageField DataImageUrlField="Image" HeaderText="图书图片" SortExpression="Descn" >
                 <ControlStyle Height="25px" Width="35px" />
             </asp:ImageField>
             
