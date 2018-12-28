@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="搜索结果" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Search.aspx.cs" Inherits="Search" %>
 
-<%@ Register Src="UserControl/BookTree.ascx" TagName="PetTree" TagPrefix="uc" %>
+<%@ Register Src="UserControl/BookTree.ascx" TagName="BookTree" TagPrefix="uc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
