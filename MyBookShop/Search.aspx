@@ -16,7 +16,7 @@
           <table style="border: 1px solid #ccc; width: 100%;">
             <tr>
               <td style="text-align: center; vertical-align: middle; width: 40%;" rowspan="7">
-                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Bind("Image") %>' />
+                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Bind("Image") %>' Height="150px" Width="100px" />
               </td>
               <td style="border: 1px solid #808080; width: 40%;">书号： </td>
               <td style="border: 1px solid #808080; width: 20%;">
