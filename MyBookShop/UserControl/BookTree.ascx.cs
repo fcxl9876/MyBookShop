@@ -46,7 +46,7 @@ public partial class UserControl_BookTree : System.Web.UI.UserControl
             TreeNode treeNode = new TreeNode();
             treeNode.Text = book.Name;
             treeNode.Value = book.BookId.ToString();
-            treeNode.NavigateUrl = "~/BookShow.aspx?ProductId=" + book.BookId.ToString();
+            treeNode.NavigateUrl = "~/BookShow.aspx?BookId=" + book.BookId.ToString();
             tn.ChildNodes.Add(treeNode);
         }
     }
