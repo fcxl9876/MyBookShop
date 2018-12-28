@@ -11,23 +11,23 @@ public partial class UserControl_AutoShow : System.Web.UI.UserControl
     }
     protected void Bind()
     {
-        var products = from b in db.Book
+        var books = from b in db.Book
                        select b;
-        gvProduct.DataSource = products;
-        gvProduct.DataBind();
+        gvBook.DataSource = books;
+        gvBook.DataBind();
     }
 
-    protected void gvProduct_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    protected void gvBook_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        gvProduct.PageIndex = e.NewPageIndex;
+        gvBook.PageIndex = e.NewPageIndex;
         Bind();
         //System.Threading.Thread.Sleep(3000);  //用于感受UpdateProgress控件效果，实际工程中需删除
     }
 
     protected void tmrAutoShow_Tick(object sender, EventArgs e)
     {
-        int newPageIndex = gvProduct.PageIndex;
-        if (newPageIndex == gvProduct.PageCount - 1)
+        int newPageIndex = gvBook.PageIndex;
+        if (newPageIndex == gvBook.PageCount - 1)
         {
             newPageIndex = 0;
         }
@@ -35,7 +35,7 @@ public partial class UserControl_AutoShow : System.Web.UI.UserControl
         {
             newPageIndex += 1;
         }
-        gvProduct.PageIndex = newPageIndex;
+        gvBook.PageIndex = newPageIndex;
     }
 
     protected void chkAutoShow_CheckedChanged(object sender, EventArgs e)

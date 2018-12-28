@@ -10,7 +10,7 @@
 
     <asp:Timer ID="tmrAutoShow" runat="server" Interval="3000" OnTick="tmrAutoShow_Tick" Enabled="False">
     </asp:Timer>
-    <asp:GridView ID="gvProduct" runat="server" AllowPaging="True" AutoGenerateColumns="false" OnPageIndexChanging="gvProduct_PageIndexChanging" PagerSettings-Mode="NextPrevious" PageSize="1" Width="100%">
+    <asp:GridView ID="gvBook" runat="server" AllowPaging="True" AutoGenerateColumns="false" OnPageIndexChanging="gvBook_PageIndexChanging" PagerSettings-Mode="NextPrevious" PageSize="1" Width="100%">
       <PagerSettings FirstPageText="首页" LastPageText="尾页" Mode="NextPrevious" NextPageText="下一页" PreviousPageText="上一页" />
       <Columns>
         <asp:TemplateField>
@@ -46,7 +46,7 @@
             </table>
           </ItemTemplate>
         </asp:TemplateField>
-        <asp:HyperLinkField DataNavigateUrlFields="ProductId" DataNavigateUrlFormatString="~/ShopCart.aspx?ProductId={0}" DataTextFormatString="{0:c}" HeaderText="放入购物车" Text="购买" />
+        <asp:HyperLinkField DataNavigateUrlFields="BookId" DataNavigateUrlFormatString="~/ShopCart.aspx?BookId={0}" DataTextFormatString="{0:c}" HeaderText="放入购物车" Text="购买" />
       </Columns>
     </asp:GridView>
     <asp:CheckBox ID="chkAutoShow" runat="server" AutoPostBack="True" Text="3秒后显示下一个商品" OnCheckedChanged="chkAutoShow_CheckedChanged" />
